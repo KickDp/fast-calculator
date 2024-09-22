@@ -1,0 +1,228 @@
+<html>
+<head>
+    <title>Calculate Fast</title>
+    <style>
+        .bg{
+            background:linear-gradient(rgb(109, 180, 188,0.8),rgb(121, 177, 177,0.5),rgb(75, 169, 188,0.3));
+        }
+        .bg h1{
+            color:rgb(29, 20, 3);
+            background-color:rgb(122, 198, 239,0.5);;
+            box-shadow: -8px -8px 15px rgba(29, 72, 99, 0.8),8px 8px 15px rgba(29,78,99);
+            width: 300px;
+            text-align: center;
+            margin-left: 40%;
+        }
+        .dis {
+            background:linear-gradient(50deg,grey,rgb(0,0,0,0.4));
+            width:350px;
+            height: 505px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin:50px auto 0;
+            padding:2rem;
+            border-radius: 25px;
+        }
+        .dis form input {
+            border:0;
+            outline:0;
+            width:50px;
+            height:60px;
+            border-radius: 10px;
+            box-shadow: -8px -8px 15px rgba(255,255,255,0.1),5px 5px 15px rgba(0,0,0,0.2);
+            background: transparent;
+            font-size: 20px;
+            text-align: center;
+            color: aliceblue;
+            margin: 10px;
+            cursor: pointer;
+        }
+        form input[type="text"] {
+            width:280px;
+            text-align: right;
+            box-shadow: -8px -8px 15px rgba(29, 72, 99, 0.8),8px 8px 15px rgba(29,78,99);
+            flex:1;
+            background-color: rgb(122, 198, 239);
+        }
+        .dis form input:hover {
+            background-color: rgb(122,198,239,0.4);
+            color:orange;
+            font-size: 28px;
+        }
+        form #equal {
+            width:280px;
+            text-align:center;
+            font-size:43px;
+            box-shadow: -8px -8px 15px rgba(29, 72, 99, 0.8),8px 8px 15px rgba(29,78,99);
+            flex:1;
+            background-color: rgb(122, 198, 239);
+        }
+        #trig .dis {
+            background:linear-gradient(50deg,grey,rgb(0,0,0,0.4));
+            width:450px;
+            height: 505px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin:100px auto 0;
+            padding:2rem;
+            border-radius: 25px;
+        }
+        #trig .dis form input {
+            border:0;
+            outline:0;
+            width:50px;
+            height:60px;
+            border-radius: 10px;
+            box-shadow: -8px -8px 15px rgba(255,255,255,0.1),5px 5px 15px rgba(0,0,0,0.2);
+            background: transparent;
+            font-size: 20px;
+            text-align: center;
+            color: aliceblue;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #trig form input[type="text"] {
+            width:280px;
+            text-align: right;
+            box-shadow: -8px -8px 15px rgba(29, 72, 99, 0.8),8px 8px 15px rgba(29,78,99);
+            flex:1;
+            background-color: rgb(122, 198, 239);
+        }
+        #trig .dis form input:hover {
+            background-color: rgb(122,198,239,0.4);
+            color:orange;
+            font-size: 28px;
+        }
+        #trig form #equal {
+            width:280px;
+            text-align:center;
+            font-size:43px;
+            box-shadow: -8px -8px 15px rgba(29, 72, 99, 0.8),8px 8px 15px rgba(29,78,99);
+            flex:1;
+            background-color: rgb(122, 198, 239);
+        }
+        #o{
+            background-color: rgb(122, 197, 241);
+            color:rgb(255, 253, 95);
+        }
+    </style>
+    <script>
+        function showTrig() {
+            document.getElementById('basic').style.display = 'none';
+            document.getElementById('trig').style.display = 'block';
+        }
+
+        function sin() {
+            display.value = Math.sin(parseFloat(display.value));
+        }
+
+        function cos() {
+            display.value = Math.cos(parseFloat(display.value));
+        }
+
+        function tan() {
+            display.value = Math.tan(parseFloat(display.value));
+        }
+
+        function log() {
+            display.value = Math.log(parseFloat(display.value));
+        }
+
+        function pow() {
+            display.value = Math.pow(parseFloat(display.value), 2);
+        }
+    </script>
+</head>
+<body>
+    <div class="bg"><h1>Fast Calculator</h1>
+    <!-- Basic Calculator -->
+    <div id="basic" class="calci">
+        <div class="dis">
+            <form>
+                <input type="text" name="display" placeholder="0">
+                <div>
+                    <input type="button" value="trg" onclick="showTrig()"></input>
+                    <input type="button" value="log" onclick="display.value+='log()'"></input>
+                    <input id="o" type="button" value="Ac" onclick="display.value=''"></input>
+                    <input id="o" type="button" value="Del" onclick="display.value=display.value.toString().slice(0,-1)"></input>
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="display.value+='7'"></input>
+                    <input type="button" value="8" onclick="display.value+='8'"></input>
+                    <input type="button" value="9" onclick="display.value+='9'"></input>
+                    <input id="s" type="button" value="+" onclick="display.value+='+'"></input>
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="display.value+='4'"></input>
+                    <input type="button" value="5" onclick="display.value+='5'"></input>
+                    <input type="button" value="6" onclick="display.value+='6'"></input>
+                    <input id="s" type="button" value="-" onclick="display.value+='-'"></input>
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="display.value+='1'"></input>
+                    <input type="button" value="2" onclick="display.value+='2'"></input>
+                    <input type="button" value="3" onclick="display.value+='3'"></input>
+                    <input id="s" type="button" value="*" onclick="display.value+='*'"></input>
+                </div>
+                <div>
+                    <input type="button" value="0" onclick="display.value+='0'"></input>
+                    <input type="button" value="00" onclick="display.value+='00'"></input>
+                    <input type="button" value="." onclick="display.value+='.'"></input>
+                    <input id="s" type="button" value="/" onclick="display.value+='/'"></input>
+                    <input id="equal" type="button" value="=" onclick="display.value=eval(display.value)"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Trigonometry Calculator -->
+    <div id="trig" style="display: none;">
+        <div class="calci">
+            <div class="dis">
+                <form>
+                    <input type="text" name="display" placeholder="0">
+                    <div>
+                        <input type="button" value="&#40" onclick="display.value+='('"></input>
+                        <input type="button" value="&#41" onclick="display.value+=')'"></input>
+                        <input type="button" value="log" onclick="display.value+='log()'"></input>
+                        <input type="button" value="Ac" onclick="display.value=''"></input>
+                        <input type="button" value="Del" onclick="display.value=display.value.toString().slice(0,-1)"></input>
+                    </div>
+                    <div>
+                        <input type="button" value="sin" onclick="display.value+=Math.sin(display.value);"></input>
+                        <input type="button" value="7" onclick="display.value+='7'"></input>
+                        <input type="button" value="8" onclick="display.value+='8'"></input>
+                        <input type="button" value="9" onclick="display.value+='9'"></input>
+                        <input type="button" value="+" onclick="display.value+='+'"></input>
+                    </div>
+                    <div>
+                        <input type="button" value="cos" onclick="display.value+='cos()'"></input>
+                        <input type="button" value="4" onclick="display.value+='4'"></input>
+                        <input type="button" value="5" onclick="display.value+='5'"></input>
+                        <input type="button" value="6" onclick="display.value+='6'"></input>
+                        <input type="button" value="-" onclick="display.value+='-'"></input>
+                    </div>
+                    <div>
+                        <input type="button" value="tan" onclick="display.value+='tan()'"></input>
+                        <input type="button" value="1" onclick="display.value+='1'"></input>
+                        <input type="button" value="2" onclick="display.value+='2'"></input>
+                        <input type="button" value="3" onclick="display.value+='3'"></input>
+                        <input type="button" value="*" onclick="display.value+='*'"></input>
+                    </div>
+                    <div>
+                        <input type="button" value="pow" onclick="display.value+='pow()'"></input>
+                        <input type="button" value="0" onclick="display.value+='0'"></input>
+                        <input type="button" value="00" onclick="display.value+='00'"></input>
+                        <input type="button" value="." onclick="display.value+='.'"></input>
+                        <input type="button" value="/" onclick="display.value+='/'"></input>
+                        <input id="equal" type="button" value="=" onclick="display.value=eval(display.value)"></input>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
